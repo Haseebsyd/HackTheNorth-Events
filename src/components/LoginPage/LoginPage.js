@@ -8,7 +8,7 @@ import instagram from "../../assets/instagram.png";
 
 // Component to render individual social media icons.
 const SocialIcon = ({ icon, name }) => (
-  <a href="#">
+  <a href="javascript:void(0)">
     <div className="social-icon">
       <img className="social-icon-image" alt={name} src={icon} />
     </div>
@@ -76,7 +76,7 @@ const LoginPage = ({
               />
             </div>
 
-            <a href="#" onClick={() => alert("Username: user\nPassword: password")}>Forgot password?</a>
+            <a href="javascript:void(0)" onClick={() => alert("Username: user\nPassword: password")}>Forgot password?</a>
             <button className="btn-primary" type="submit">Login</button>
 
             <div className="social-container">
@@ -87,7 +87,7 @@ const LoginPage = ({
 
             <div className="text-center">
               <p className="mb-0">
-                Don't have an account? <a href="#" className="url-link">Sign Up</a>
+                Don't have an account? <a href="javascript:void(0)" className="url-link">Sign Up</a>
               </p>
             </div>
 

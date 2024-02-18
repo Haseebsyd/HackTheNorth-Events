@@ -42,7 +42,7 @@ const EventsPage = ({ events, allEvents, handleLogout, onEventTypeSelect, isLogg
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, handleScroll]);
 
   // useEffect hook to update search results based on search term.
   useEffect(() => {
