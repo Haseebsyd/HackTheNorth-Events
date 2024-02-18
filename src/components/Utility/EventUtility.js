@@ -70,11 +70,11 @@ export const eventTypeColors = {
 
 // Function to render related events as a list.
 export const renderRelatedEvents = (relatedEventsIds, allEvents, handleSeeAlsoClick, isLoggedIn) => relatedEventsIds
-    .map(relatedEventId => {
-      const relatedEvent = allEvents.find(event => event.id === relatedEventId);
-      // Filtering out events that are not accessible or don't exist.
-      if (!relatedEvent || (!isLoggedIn && relatedEvent.permission === 'private')) return null;
-      // Returning a list item for each related event.
-      return <li key={relatedEventId} onClick={e => handleSeeAlsoClick(relatedEventId, e)}>{relatedEvent.name}</li>;
-    })
-    .filter(item => item);
+  .map(relatedEventId => {
+    const relatedEvent = allEvents.find(event => event.id === relatedEventId);
+    // Filtering out events that are not accessible or don't exist.
+    if (!relatedEvent || (!isLoggedIn && relatedEvent.permission === 'private')) return null;
+    // Returning a list item for each related event.
+    return <li key={relatedEventId} onClick={e => handleSeeAlsoClick(relatedEventId, e)}>{relatedEvent.name}</li>;
+  })
+  .filter(item => item);

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Event from "./Event.js";
 import SearchBar from '../Utility/SearchBar';
+import LogoutButton from '../Utility/LogoutButton';
 import { eventTypeColors } from '../Utility/EventUtility.js';
 import "./EventsPage.css";
 
@@ -59,7 +60,7 @@ const EventsPage = ({ events, allEvents, handleLogout, onEventTypeSelect, isLogg
       <nav className={`header ${headerVisible ? '' : 'hidden'}`}>
         <h1>HackTheNorth Events!</h1>
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchResults={searchResults} />
-        <button onClick={handleLogout} className="logout">Logout</button>
+        <LogoutButton onLogout={handleLogout} />
       </nav>
       <div className="card_wrapper">
       {searchResults.map(event => (
