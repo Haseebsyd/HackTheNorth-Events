@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# HackTheNorth Frontend Developer Challenge Submission
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Requirements and Implementation](#requirements-and-implementation)
+3. [Additional Features](#additional-features)
+4. [Technical Considerations](#technical-considerations)
+5. [Appearance and Responsiveness](#appearance-and-responsiveness)
+6. [Resources Used](#resources-used)
+7. [Future Enhancements](#future-enhancements)
+8. [Deployment](#deployment)
 
-## Available Scripts
+## Project Overview
+For the Hack the North 2024 Frontend Developer Challenge, this project showcases a web application built to display events for Hackathon Global Inc.™ attendees. Utilizing React.js, GraphQL, and modern web development practices, the application presents a dynamic and interactive platform for viewing both public and private hackathon events.
 
-In the project directory, you can run:
+## Requirements and Implementation
+### Basic Functionality
+1. **Display All Events on App Visit:** 
+   - Successfully implemented, displaying all events fetched from the API on the initial visit.
+2. **Event Sorting by Start Time:** 
+   - Successfully implemented, events are sorted by start time with a secondary sort by end time for events sharing the same start time.
+3. **Login Screen for Private Events:** 
+   - Implemented a hard-coded login feature, with credentials `Username: user` and `Password: password`, enabling access to both public and private events upon successful login.
+4. **Linking and Viewing Related Events:** 
+   - A 'See Also' section on each event card allows navigation to the related events enlarged and detailed view, except for events without related items.
+        **Such as:**
+            - `Ladies Storm Hackathons Meet-Up`
 
-### `npm start`
+### Additional Features
+- **Search Functionality:**
+  - The search bar dynamically filters events by name with each keystroke. If multiple events match the search query, pressing the search button redirects to the event with the lowest ID matching the criteria.
+- **Event Type Filtering:**
+  - Users can filter events based on type ('TECH TALK', 'WORKSHOP', 'ACTIVITY'). In the public view, 'ACTIVITY' type events are hidden due to their 'private' permission status.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technical Considerations
+### Code Quality and Documentation
+The codebase is structured for clarity and ease of understanding, making it accessible for developers unfamiliar with the project. Key aspects include:
+- **Modular Design:** Components like `LoginPage`, `EventsPage`, and `Event` are separated into distinct files, enhancing readability and maintenance.
+- **Use of Comments:** The code includes explanatory comments, particularly in utility functions like `fetchAndSortEvents` in `EventUtility.js`, clarifying their purpose and functionality.
+- **Consistent Naming Conventions:** The use of clear and consistent naming for variables and functions across the application aids in understanding the code flow and hierarchy.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Scalability and Extensibility
+The application's architecture is designed with scalability in mind:
+- **Component-Based Structure:** The use of React components allows for easy integration of additional features or modifications of existing ones.
+- **Dynamic Data Handling:** Functions like `fetchAndSortEvents` demonstrate the capability to handle dynamic data, indicating the ease of incorporating more events or new event types.
+- **Flexible Event Rendering:** The `EventsPage` and `Event` components are designed to adapt to varying amounts of data, ensuring the UI remains effective even with an increased number of events.
 
-### `npm test`
+### Best Practices and Maintainability
+The project follows several best practices ensuring its maintainability:
+- **State Management:** The use of React's useState and useEffect hooks in `App.js` and `EventsPage.js` for managing application state is a testament to modern development practices.
+- **Responsive Design:** CSS stylesheets, like those in `app.css` and `Card.css`, use media queries ensuring the application is responsive across different device sizes.
+- **Error Handling:** The application handles potential errors gracefully, such as network issues when fetching data, ensuring robustness.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Accessibility and Responsiveness
+The application is designed to be accessible and user-friendly:
+- **Keyboard Accessibility:** Key functionalities, like navigating through events and closing the enlarged event view, are accessible via keyboard, catering to users who rely on keyboard navigation.
+- **Responsive Layout:** The use of responsive design principles ensures that the application is usable across various devices and screen sizes.
+- **Consideration for Visual Impairments:** High contrast ratios and clear font sizes in the UI design aid users with visual impairments.
 
-### `npm run build`
+### Consistency and Appeal in Styling
+The application's styling is both consistent and visually appealing:
+- **Unified Theme and Color Scheme:** The application maintains a cohesive color scheme and theme throughout, as seen in the consistent use of styles in components like `Card.js` and `Event.js`.
+- **Interactive UI Elements:** Elements like buttons and links have hover effects, enhancing the interactive experience.
+- **Visual Feedback for User Interactions:** The UI provides clear feedback for user actions, such as highlighting selected event types in the filter section.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Appearance and Responsiveness
+- **Consistent and Appealing Design:** 
+  - The application maintains a visually appealing and consistent design across various devices and screen sizes.
+- **Responsive Design Techniques:** 
+  - Media queries and flexible layouts ensure adaptability to different screen sizes.
+- **Accessibility:** 
+  - Keyboard navigability and tab accessibility are implemented. The usage of escape key to exit enlarged views enhances usability. The site has been tested using Chrome's developer tools to ensure responsiveness. However, further improvements in areas like screen reader compatibility and ARIA label usage would enhance accessibility for users with visual impairments.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Resources Used
+- **Frontend Development:** 
+  - React.js was used for building the user interface.
+  - GraphQL was utilized for API queries, ensuring efficient data retrieval and manipulation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Future Enhancements
+- **Event Reordering and Persistence:** 
+  - A planned feature is to allow users to reorder events and save these preferences using local storage. This would involve implementing a draggable interface for events, where users can rearrange them as desired. The new order would be saved in the browser's local storage or cookies, ensuring that the custom arrangement persists across sessions. This feature would enhance user experience by allowing personalized event organization.
+- **Improved Accessibility:** 
+  - Plans to further enhance accessibility features, specifically for users with impairments, are considered for future updates.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Deployment
+- **Live Application:** 
+  - The application is deployed and can be accessed [here](https://hackthenorth-events.netlify.app/).
+- **Access Credentials:** 
+  - To explore the full features, use `Username: user` and `Password: password`.
