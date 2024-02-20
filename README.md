@@ -3,8 +3,15 @@
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Requirements and Implementation](#requirements-and-implementation)
-3. [Additional Features](#additional-features)
-4. [Technical Considerations](#technical-considerations)
+    - 2.1 [Basic Functionality](#basic-functionality)
+    - 2.2 [Additional Features](#additional-features)
+3. [Technical Considerations](#technical-considerations)
+    - 3.1 [Code Quality and Documentation](#code-quality-and-documentation)
+    - 3.2 [Scalability and Extensibility](#scalability-and-extensibility)
+    - 3.3 [Best Practices and Maintainability](#best-practices-and-maintainability)
+    - 3.4 [Accessibility and Responsiveness](#accessibility-and-responsiveness)
+    - 3.5 [Consistency and Appeal in Styling](#consistency-and-appeal-in-styling)
+4. [Project Structure and File Overview](#project-structure-and-file-overview)
 5. [Appearance and Responsiveness](#appearance-and-responsiveness)
 6. [Resources Used](#resources-used)
 7. [Future Enhancements](#future-enhancements)
@@ -62,6 +69,48 @@ The application's styling is both consistent and visually appealing:
 - **Unified Theme and Color Scheme:** The application maintains a cohesive color scheme and theme throughout, as seen in the consistent use of styles in components like `Card.js` and `Event.js`.
 - **Interactive UI Elements:** Elements like buttons and links have hover effects, enhancing the interactive experience.
 - **Visual Feedback for User Interactions:** The UI provides clear feedback for user actions, such as highlighting selected event types in the filter section.
+
+### Project Structure and File Overview
+#### App.js
+- Serves as the root component.
+- Orchestrates overall application flow including routing.
+- Manages state for events and user authentication.
+
+#### LoginPage.js
+- Handles the user login interface.
+- Manages regular and guest logins.
+- Displays social media login options.
+
+#### EventsPage.js
+- Displays the list of events.
+- Integrates search bar, logout button, and event type filters.
+- Manages dynamic UI visibility based on user scroll.
+
+#### Event.js
+- Displays individual event details in a card layout.
+- Handles navigation to related events.
+
+#### EnlargedEvent.js
+- Provides a detailed view of a single event.
+- Includes functionality to close the view and navigate between events.
+
+#### Card.js
+- Generic component for consistent content display across the application.
+
+#### Background.js
+- Implements the background particle effect using tsparticles.
+- Enhances the visual appeal of the application.
+
+#### EventUtility.js
+- Contains utility functions for event-related operations.
+- Functions include fetching and sorting events, formatting date ranges, and defining event type colors.
+
+#### LogoutButton.js
+- Dedicated component for user logout functionality.
+
+#### SearchBar.js
+- Manages the event search functionality.
+- Includes updating the search term and navigating to selected event details.
 
 ## Appearance and Responsiveness
 - **Consistent and Appealing Design:** 
